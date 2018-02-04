@@ -27,7 +27,6 @@ class Calculator {
 
   static pow (a, b) {
     return new BigNumber(parseFloat(a)).pow(parseFloat(b))
-    // return Math.pow(a, b)
   }
 
   static toFormat (value) {
