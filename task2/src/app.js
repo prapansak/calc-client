@@ -82,7 +82,7 @@ document.getElementById('btn-pow').addEventListener('click', function () {
 document.getElementById('btn-save').addEventListener('click', function () {
   const input = getInput()
   if (!_.isEmpty(input.a) && !_.isEmpty(input.b) && !_.isEmpty(data)) {
-    File.save(JSON.stringify(data))
+    File.save(data)
     document.getElementById('input-a').value = ''
     document.getElementById('input-b').value = ''
     document.getElementById('result').value = ''
