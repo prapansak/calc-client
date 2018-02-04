@@ -60,7 +60,7 @@ class File {
       }
       return axios(config)
     } else {
-      file.writeFile(FILE_PATH, data, {encoding: ENCODING}, (err, data) => {
+      file.writeFile(FILE_PATH, JSON.stringify(data), {encoding: ENCODING}, (err, data) => {
         if (err) {
           throw err
         }
