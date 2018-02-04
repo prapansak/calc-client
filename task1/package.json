@@ -1,0 +1,25 @@
+{
+  "name": "calc-client",
+  "version": "1.0.0",
+  "description": "calculator app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-win": "electron-packager . --overwrite --prune=true --platform=win32 --arch=x64 --version-string.ProductName=\"Calculator\""
+  },
+  "author": "Prapansak Kaewlamul",
+  "devDependencies": {
+    "electron": "~1.7.8",
+    "electron-packager": "^10.1.2",
+    "eslint": "^4.16.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "dependencies": {
+    "bignumber.js": "^6.0.0",
+    "lodash": "^4.17.4"
+  }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./css/photon.min.css">
+
+    <style>
+      .pane-group {
+        padding: 15px;
+      }
+      .form-group > label {
+        padding-top: 10px;
+      }
+      .small-size {
+        font-size: 9px !important;
+        font-weight: bold;
+        padding-top: 2px;
+        margin-right: 5px;
+      }
+      textarea {
+        resize: none;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="window">
+        <header class="toolbar toolbar-header">
+          <h1 class="title">Calculator</h1>
+        </header>
+        <div class="window-content">
+          <div class="pane-group">
+            <div class="pane">
+              <div class="padded-less">
+                <div class="form-group">
+                  <input id="input-a" type="number" class="form-control" placeholder="Input A">
+                </div>
+                <div class="form-group">
+                  <input id="input-b" type="number" class="form-control" placeholder="Input B">
+                </div>
+
+                <div class="btn-group">
+                  <button id="btn-plus" class="btn btn-large btn-default">
+                    <span class="icon icon-plus"></span>
+                  </button>
+                  <button id="btn-minus" class="btn btn-large btn-default">
+                    <span class="icon icon-minus"></span>
+                  </button>
+                  <button id="btn-multiply" class="btn btn-large btn-default">
+                    <span class="icon icon-cancel"></span>
+                  </button>
+                  <button id="btn-divide" class="btn btn-large btn-default">
+                    <span class="icon">/</span>
+                  </button>
+                  <button id="btn-pow" class="btn btn-large btn-default">
+                    <span class="icon small-size">POW</span>
+                  </button>
+                </div>
+
+                <div class="form-group">
+                  <label>Result</label>
+                  <textarea id="result" class="form-control" rows="3" disabled></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+              
+        </div>
+        <footer class="toolbar toolbar-footer">
+          <div class="toolbar-actions">
+            <button id="btn-save" class="btn btn-primary pull-right">Save</button>
+            <button id="btn-load" class="btn btn-default pull-right">Load</button>
+          </div>
+        </footer>
+      </div>
+
+      <script>require('./app.js')</script>
+  </body>
+</html>
