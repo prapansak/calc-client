@@ -1,65 +1,32 @@
-const axios = require('axios')
-const HOST = 'http://localhost:3000'
+const BigNumber = require('bignumber.js')
 
 class Calculator {
   static plus (a, b) {
-    const config = {
-      method: 'post',
-      url: HOST + '/plus',
-      data: {
-        inputA: a,
-        inputB: b
-      }
-    }
-    return axios(config)
+    const x = new BigNumber(a)
+    const y = new BigNumber(b)
+    return x.plus(y)
   }
 
   static minus (a, b) {
-    const config = {
-      method: 'post',
-      url: HOST + '/minus',
-      data: {
-        inputA: a,
-        inputB: b
-      }
-    }
-    return axios(config)
+    const x = new BigNumber(a)
+    const y = new BigNumber(b)
+    return x.minus(y)
   }
 
   static multiply (a, b) {
-    const config = {
-      method: 'post',
-      url: HOST + '/multiply',
-      data: {
-        inputA: a,
-        inputB: b
-      }
-    }
-    return axios(config)
+    const x = new BigNumber(a)
+    const y = new BigNumber(b)
+    return x.multipliedBy(y)
   }
 
   static divide (a, b) {
-    const config = {
-      method: 'post',
-      url: HOST + '/divide',
-      data: {
-        inputA: a,
-        inputB: b
-      }
-    }
-    return axios(config)
+    const x = new BigNumber(a)
+    const y = new BigNumber(b)
+    return x.dividedBy(y)
   }
 
   static pow (a, b) {
-    const config = {
-      method: 'post',
-      url: HOST + '/pow',
-      data: {
-        inputA: a,
-        inputB: b
-      }
-    }
-    return axios(config)
+    return new BigNumber(parseFloat(a)).pow(parseFloat(b))
   }
 }
 

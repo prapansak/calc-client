@@ -13,13 +13,10 @@ document.getElementById('btn-plus').addEventListener('click', function () {
   const input = getInput()
   if (!_.isEmpty(input.a) && !_.isEmpty(input.b)) {
     if (!_.isNaN(input.a) && !_.isNaN(input.b)) {
-      const res = Calculator.plus(input.a, input.b)
-      res.then((d) => {
-        const result = d.data.data
-        setButtonActive('btn-plus')
-        showResult(result)
-        setPreviousData(input.a, input.b, 'plus', result)
-      })
+      const result = Calculator.plus(input.a, input.b)
+      setButtonActive('btn-plus')
+      showResult(result)
+      setPreviousData(input.a, input.b, 'plus', result)
     }
   } else {
     showWarningMessage('Input field is empty.')
@@ -30,13 +27,10 @@ document.getElementById('btn-minus').addEventListener('click', function () {
   const input = getInput()
   if (!_.isEmpty(input.a) && !_.isEmpty(input.b)) {
     if (!_.isNaN(input.a) && !_.isNaN(input.b)) {
-      const res = Calculator.minus(input.a, input.b)
-      res.then((d) => {
-        const result = d.data.data
-        setButtonActive('btn-minus')
-        showResult(result)
-        setPreviousData(input.a, input.b, 'minus', result)
-      })
+      const result = Calculator.minus(input.a, input.b)
+      setButtonActive('btn-minus')
+      showResult(result)
+      setPreviousData(input.a, input.b, 'minus', result)
     }
   } else {
     showWarningMessage('Input field is empty.')
@@ -47,13 +41,10 @@ document.getElementById('btn-multiply').addEventListener('click', function () {
   const input = getInput()
   if (!_.isEmpty(input.a) && !_.isEmpty(input.b)) {
     if (!_.isNaN(input.a) && !_.isNaN(input.b)) {
-      const res = Calculator.multiply(input.a, input.b)
-      res.then((d) => {
-        const result = d.data.data
-        setButtonActive('btn-multiply')
-        showResult(result)
-        setPreviousData(input.a, input.b, 'multiply', result)
-      })
+      const result = Calculator.multiply(input.a, input.b)
+      setButtonActive('btn-multiply')
+      showResult(result)
+      setPreviousData(input.a, input.b, 'multiply', result)
     }
   } else {
     showWarningMessage('Input field is empty.')
@@ -64,13 +55,10 @@ document.getElementById('btn-divide').addEventListener('click', function () {
   const input = getInput()
   if (!_.isEmpty(input.a) && !_.isEmpty(input.b)) {
     if (!_.isNaN(input.a) && !_.isNaN(input.b)) {
-      const res = Calculator.divide(input.a, input.b)
-      res.then((d) => {
-        const result = d.data.data
-        setButtonActive('btn-divide')
-        showResult(result)
-        setPreviousData(input.a, input.b, 'divide', result)
-      })
+      const result = Calculator.divide(input.a, input.b)
+      setButtonActive('btn-divide')
+      showResult(result)
+      setPreviousData(input.a, input.b, 'divide', result)
     }
   } else {
     showWarningMessage('Input field is empty.')
@@ -81,13 +69,10 @@ document.getElementById('btn-pow').addEventListener('click', function () {
   const input = getInput()
   if (!_.isEmpty(input.a) && !_.isEmpty(input.b)) {
     if (!_.isNaN(input.a) && !_.isNaN(input.b)) {
-      const res = Calculator.pow(input.a, input.b)
-      res.then((d) => {
-        const result = d.data.data
-        setButtonActive('btn-pow')
-        showResult(result)
-        setPreviousData(input.a, input.b, 'pow', result)
-      })
+      const result = Calculator.pow(input.a, input.b)
+      setButtonActive('btn-pow')
+      showResult(result)
+      setPreviousData(input.a, input.b, 'pow', result)
     }
   } else {
     showWarningMessage('Input field is empty.')
@@ -97,7 +82,7 @@ document.getElementById('btn-pow').addEventListener('click', function () {
 document.getElementById('btn-save').addEventListener('click', function () {
   const input = getInput()
   if (!_.isEmpty(input.a) && !_.isEmpty(input.b) && !_.isEmpty(data)) {
-    File.save(data)
+    File.save(JSON.stringify(data))
     document.getElementById('input-a').value = ''
     document.getElementById('input-b').value = ''
     document.getElementById('result').value = ''
@@ -131,6 +116,10 @@ document.getElementById('btn-load').addEventListener('click', function () {
       showWarningMessage('Empty data.')
     }
   })
+})
+
+document.getElementById('checkbox').addEventListener('change', function (event) {
+  File.setCloud(event.target.checked)
 })
 
 function getInput () {
